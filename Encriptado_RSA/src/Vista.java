@@ -14,7 +14,7 @@ import javax.swing.JTextField;
  *
  * @author <a href="https://github.com/JQuinteroC">JQuinteroC</a>
  */
-public class Vista extends JFrame implements ActionListener {
+public class Vista extends JFrame {
 
     JLabel lblTitulo = new JLabel("Cifrado RSA");
     JLabel lblP = new JLabel("Ingrese P");
@@ -67,8 +67,9 @@ public class Vista extends JFrame implements ActionListener {
         txtResultado.setFont(fuente);
         txtResultado.setBorder(txtQ.getBorder());
         txtResultado.setBounds(8, 210, 361, 30);
+        txtResultado.setEditable(false);
 
-        setSize(395, 300);
+        setSize(393, 290);
         setLocationRelativeTo(null);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -93,8 +94,11 @@ public class Vista extends JFrame implements ActionListener {
         c.add(txtResultado);
     }
 
-    @Override
-    public void actionPerformed(ActionEvent rr) {
-
+    void asignaOyentes(Controlador c) {
+        btnEncriptar.addActionListener(c);
+        txtN.addKeyListener(c);
+        txtP.addKeyListener(c);
+        txtQ.addKeyListener(c);
+        txtPalabra.addKeyListener(c);
     }
 }

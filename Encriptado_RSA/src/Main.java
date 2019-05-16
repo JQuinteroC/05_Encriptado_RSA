@@ -10,6 +10,8 @@ public class Main {
      */
     public static void main(String[] args) {
         Vista f = new Vista();
+        RSA m = new RSA();
+        Controlador u = new Controlador(f, m);
 
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -23,5 +25,6 @@ public class Main {
         }
 
         f.mostrar();
+        f.asignaOyentes(u);
     }
 }

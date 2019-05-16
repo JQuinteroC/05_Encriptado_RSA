@@ -69,9 +69,9 @@ public class RSA extends abs implements primos {
 
 abstract class abs {
 
-    int p, q, n;
-    int array[];
-    double array2[];
+    int p;
+    int q;
+    int n;
 
     public abstract int FI(int p, int q);
 
