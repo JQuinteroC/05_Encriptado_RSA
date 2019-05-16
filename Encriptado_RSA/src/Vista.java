@@ -12,11 +12,11 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author Estudiantes
+ * @author <a href="https://github.com/JQuinteroC">JQuinteroC</a>
  */
 public class Vista extends JFrame implements ActionListener {
 
-    JLabel lblTitulo = new JLabel("Diagramas UML");
+    JLabel lblTitulo = new JLabel("Cifrado RSA");
     JLabel lblP = new JLabel("Ingrese P");
     JLabel lblQ = new JLabel("Ingrese Q");
     JLabel lblN = new JLabel("Ingrese N");
@@ -35,7 +35,7 @@ public class Vista extends JFrame implements ActionListener {
 
     void mostrar() {
         lblTitulo.setFont(new java.awt.Font("Verdana", 1, 25));
-        lblTitulo.setBounds(87, 5, 220, 45);
+        lblTitulo.setBounds(110, 5, 220, 45);
 
         lblP.setFont(fuente);
         lblP.setBounds(8, 50, 70, 25);
@@ -72,7 +72,7 @@ public class Vista extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setTitle("Diagrama UML");
+        setTitle("Cifrado RSA");
     }
 
     public Vista() throws HeadlessException {
