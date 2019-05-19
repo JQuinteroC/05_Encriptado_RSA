@@ -1,11 +1,12 @@
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.HeadlessException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
-import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 /**
@@ -27,7 +28,9 @@ public class Vista extends JFrame {
 
     JButton btnEncriptar = new JButton("Encriptar");
 
-    JTextArea txtResultado = new JTextArea();
+    JLabel txtResultado = new JLabel();
+
+    JScrollPane jsRes = new JScrollPane();
 
     Font fuente = new Font("verdana", Font.PLAIN, 13);
 
@@ -63,9 +66,12 @@ public class Vista extends JFrame {
         btnEncriptar.setBounds(8, 170, 361, 30);
 
         txtResultado.setFont(fuente);
-        txtResultado.setBorder(txtQ.getBorder());
-        txtResultado.setBounds(8, 210, 361, 30);
-        txtResultado.setEditable(false);
+        txtResultado.setBorder(null);
+        txtResultado.setOpaque(true);
+        txtResultado.setBackground(Color.white);
+
+        jsRes.setViewportView(txtResultado);
+        jsRes.setBounds(8, 210, 361, 30);
 
         setSize(393, 290);
         setLocationRelativeTo(null);
@@ -89,7 +95,7 @@ public class Vista extends JFrame {
         c.add(txtN);
         c.add(txtPalabra);
         c.add(btnEncriptar);
-        c.add(txtResultado);
+        c.add(jsRes);
     }
 
     void asignaOyentes(Controlador c) {
@@ -98,5 +104,9 @@ public class Vista extends JFrame {
         txtP.addKeyListener(c);
         txtQ.addKeyListener(c);
         txtPalabra.addKeyListener(c);
+    }
+
+    void setText(String txt) {
+
     }
 }

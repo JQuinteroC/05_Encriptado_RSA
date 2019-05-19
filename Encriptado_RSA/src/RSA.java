@@ -27,9 +27,10 @@ public class RSA extends abs implements primos {
     @Override
     public int S(int n) {
         s = 0;
-        for (int x = 0; x <= 1000; x++) {
+        for (int x = 0; x <= (p*q)+1; x++) {
             if (((n * x) % fi) == 1) {
                 s = x;
+                break;
             }
         }
 
